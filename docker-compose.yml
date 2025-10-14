@@ -1,0 +1,24 @@
+services:
+  ql-docker:
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - "27960:27960"
+      - "27960:27960/udp"
+    volumes:
+      - ./server-config/workshop.txt:/app/Steam/steamapps/common/qlds/baseq3/workshop.txt
+      - ./server-config/workshop:/app/Steam/steamapps/common/qlds/steamapps/workshop
+      # uncomment and create file if you want to modify the server config dynamically
+      #- ./server-config/server.cfg:/app/Steam/steamapps/common/qlds/baseq3/server.cfg
+      # add extra plugins to this directory
+      #- ./server-config/extra-plugins/example.py:/app/Steam/steamapps/common/qlds/minqlxtended-plugins/example.py
+
+  redis:
+    image: redis
+    restart: unless-stopped
+    expose:
+      - 6379
+    volumes:
+      - ./redis-data:/data
+
