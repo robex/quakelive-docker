@@ -12,4 +12,4 @@ docker compose build
 docker compose up -d
 ```
 
-Afterwards, you should be able to connect to the server using the hosts IP (default ql port 27960 is used, you can change this in `docker-compose.yml`).
+Afterwards, you should be able to connect to the server using the hosts IP (default ql port 27960 is used, you can change this in `docker-compose.yml`). Make sure the firewall allows incoming connections to the port you are using, both TCP and UDP.
