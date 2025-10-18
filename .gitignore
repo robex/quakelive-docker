@@ -1,4 +1,4 @@
-redis-data/*
+redis-data/
 *.swp
 server-config/extra-plugins/*
 !server-config/extra-plugins/.gitignore
