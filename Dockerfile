@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y python3-dev build-essential git sed
 
 RUN git clone https://github.com/tjone270/minqlxtended.git
 WORKDIR /app/minqlxtended
-RUN sed -i '/"unix_socket_path": address\[0\] if unix_socket else None,/d' ./python/minqlxtended/database.py
 RUN make
 
 
